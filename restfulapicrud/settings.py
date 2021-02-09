@@ -126,11 +126,12 @@ USE_TZ = True
 
 import os
 
+STATIC_ROOT=os.path.join(BASE_DIR,'assests')
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'C:/Users/LENOVO/workspace/project/restfulapicrud/xmeme/templates/static')
 ]
-STATIC_ROOT=os.path.join(BASE_DIR,'C:/Users/LENOVO/workspace/project/restfulapicrud/xmeme/templates/assests')
+
 
 REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
