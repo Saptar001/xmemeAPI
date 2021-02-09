@@ -1,0 +1,99 @@
+
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMEME</title>
+
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+</head>
+<body style="background-color: burlywood;">
+
+    <!-- =============Main section starts================ -->
+
+    <main class="site-main">
+
+        <!-- ==============Input form section starts============== -->
+        <section class="top-section">
+            <form action={% url "add_data_form_submission" %} method="POST" enctype="multipart/form-data">
+
+                <!--"add_data_form_submission" is the url the form will search and redirect to after form submission-->
+
+                {% csrf_token %}
+                <div class="container">
+                    <h1>Meme Stream</h1>
+                    <div>
+                        <label for="O_name"><b>Meme Owner</b></label>
+                    <input type="text" placeholder="Enter your name" name="O_name" id="O_name" required>
+                    </div>
+                    <div>
+                        <label for="O_caption"><b>Caption</b></label>
+                    <input type="text" placeholder="Be creative with caption" name="O_caption" id="O_caption" required>
+                    </div>
+                    <div>
+                        <label for="url"><b>Meme URL</b></label>
+                    <input type="text" placeholder="Enter URL" name="url" id="url" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="submitbtn">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+
+        <!-- ==============================Input form section ends======================== -->
+
+
+
+        <!-- ==============================Display of memes section starts======================== -->
+
+        <section>
+            <div>
+                <div>
+                    <div>
+
+                        {% for dest in dests %}
+
+                        <!-- dests is the Meme objects created in models.py and redirected from views.py -->
+
+                        <!-- Destination -->
+                        <div>
+                            <div style="float: left; width: 20%; padding:1px;">
+                                <figure>
+                                <img src="{{dest.meme_url}}" alt="This is meme" width="300" height="300">
+                                <figcaption>{{dest.meme_caption}}</figcaption>
+                                <figcaption>From {{dest.name}}</figcaption>
+                                <!-- <div class="spec_offer text-center"><a href="#">Special Offer</a></div> -->
+                            </figure>
+                            </div>
+                            <!-- <div style="float: left;">
+                                <div>{{dest.meme_caption}}
+                                </div>
+                                <!-- <div>
+                                    <p>{{dest.desc}}</p>
+                                </div> -->
+                                <!--<div style="float: left; ">From {{dest.name}}</div>
+                            </div> -->
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============End os display meme section============== -->
+    </main>
+
+    <!-- ==============End of main ========================= -->
+    
+    
+</body>
+</html>
