@@ -1,0 +1,1 @@
+web: gunicorn restfulapicrud.wsgi --log-file -
