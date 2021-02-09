@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XMEME</title>
 
-    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static '/xmeme/templates/styles/style.css' %}">
 </head>
 <body style="background-color: burlywood;">
 
@@ -19,7 +19,7 @@
     <main class="site-main">
 
         <!-- ==============Input form section starts============== -->
-        <section class="top-section">
+        <section style="padding: 80px 500px;">
             <form action={% url "add_data_form_submission" %} method="POST" enctype="multipart/form-data">
 
                 <!--"add_data_form_submission" is the url the form will search and redirect to after form submission-->
