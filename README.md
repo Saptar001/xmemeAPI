@@ -3,7 +3,7 @@
 We are seeing the craze of *memes* nowadays among people, so I thought of making a website on uploading memes via URL.
 One could take any memes(or pictures ) and just copy the image's url paste it in the input section and it gets displayed there itself.
 
-![xmeme](https://github.com/Saptar001/xmemeAPI/xmeme.jpg?raw=true)
+![xmeme](https://gitlab.crio.do/COHORT_ME_BUILDOUT_XMEME_ENROLL_1612436694845/saptarsheesarkar001-me_buildout_xmeme/xmemeAPI/xmeme.JPG?raw=true)
 
 ## Tech Stack used
 The project mainly uses __Django__ and __REST-framework__ for the backend and __HTML__ for the frontend.
