@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '^xs%98mv934^p%e#acc-6&8(a3+ihkh%^g9vd*12_!0^au+rkv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ['xmeme-saptarshee.herokuapp.com','127.0.0.1:8000']
+ALLOWED_HOSTS = ['xmeme-saptarshee.herokuapp.com','127.0.0.1:8000']
 
 
 # Application definition
@@ -129,7 +129,7 @@ import os
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'/xmeme/templates/static')
+    os.path.join(BASE_DIR,'xmeme/templates/static')
 ]
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 
